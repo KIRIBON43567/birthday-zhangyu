@@ -9,6 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- 图片预加载 - 解决照片墙加载空白问题 -->
+    <link rel="preload" as="image" href="/photos/photo1.jpg">
+    <link rel="preload" as="image" href="/photos/photo2.jpg">
+    <link rel="preload" as="image" href="/photos/photo3.jpg">
+    <link rel="preload" as="image" href="/photos/photo4.jpg">
+    <link rel="preload" as="image" href="/photos/photo5.jpg">
+    <link rel="preload" as="image" href="/photos/photo6.jpg">
+    <link rel="preload" as="image" href="/photos/photo7.jpg">
+    <link rel="preload" as="image" href="/photos/photo8.jpg">
+    <link rel="preload" as="image" href="/photos/photo9.jpg">
+    <link rel="preload" as="image" href="/photos/photo10.jpg">
+    <link rel="preload" as="image" href="/photos/photo11.jpg">
+    <link rel="preload" as="image" href="/photos/photo12.jpg">
+    <link rel="preload" as="image" href="/photos/photo13.jpg">
+    <link rel="preload" as="image" href="/photos/photo14.jpg">
+    <link rel="preload" as="image" href="/photos/photo15.jpg">
+    <link rel="preload" as="image" href="/photos/photo16.jpg">
+    <link rel="preload" as="image" href="/photos/photo17.jpg">
+    <link rel="preload" as="image" href="/photos/photo18.jpg">
+    <link rel="preload" as="image" href="/photos/photo19.jpg">
+    <link rel="preload" as="image" href="/photos/photo20.jpg">
+    <link rel="preload" as="image" href="/avatar.png">
+    <link rel="preload" as="image" href="/first-chat.jpg">
+    
     <style>
         body {
             margin: 0;
@@ -48,6 +73,44 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- 显式引入入口文件 -->
+    
+    <!-- JavaScript 预加载脚本 - 确保图片在后台加载 -->
+    <script>
+        // 在页面加载时立即开始预加载所有图片
+        (function() {
+            const imagesToPreload = [
+                '/photos/photo1.jpg',
+                '/photos/photo2.jpg',
+                '/photos/photo3.jpg',
+                '/photos/photo4.jpg',
+                '/photos/photo5.jpg',
+                '/photos/photo6.jpg',
+                '/photos/photo7.jpg',
+                '/photos/photo8.jpg',
+                '/photos/photo9.jpg',
+                '/photos/photo10.jpg',
+                '/photos/photo11.jpg',
+                '/photos/photo12.jpg',
+                '/photos/photo13.jpg',
+                '/photos/photo14.jpg',
+                '/photos/photo15.jpg',
+                '/photos/photo16.jpg',
+                '/photos/photo17.jpg',
+                '/photos/photo18.jpg',
+                '/photos/photo19.jpg',
+                '/photos/photo20.jpg',
+                '/avatar.png',
+                '/first-chat.jpg'
+            ];
+            
+            // 使用 Image 对象预加载
+            imagesToPreload.forEach(function(src) {
+                const img = new Image();
+                img.src = src;
+            });
+            
+            console.log('图片预加载已启动，共 ' + imagesToPreload.length + ' 张图片');
+        })();
+    </script>
 </body>
 </html>
